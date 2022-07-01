@@ -1,11 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+/*
+ * @Author: HWZ
+ * @Date: 2022-07-01
+ * @LastEditTime: 2022-07-01
+ * @LastEditors: HWZ
+ * @Description: 路由配置页
+ */
+
+import './App.scss';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
