@@ -1,0 +1,29 @@
+#Header {
+    background: rgba(255, 255, 255, 0);
+    width: 100%;
+    height: 3.5rem;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+
+    .header-logo {
+        margin-left: 15rem;
+    }
+
+    .header-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding-right: 10rem;
+
+        .list-item {
+            margin-right: 5rem;
+            cursor: pointer;
+            color: #fff;
+            font-size: 1rem;
+        }
+    }
+}
