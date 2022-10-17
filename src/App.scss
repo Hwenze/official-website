@@ -1,3 +1,12 @@
 .Appclanme {
   position: relative;
+
+  .backToTop {
+    width: 2.8rem;
+    height: 3.12rem;
+    position: fixed;
+    right: 3.56rem;
+    bottom: 3.12rem;
+    cursor: pointer;
+  }
 }
