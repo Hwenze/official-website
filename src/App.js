@@ -1,7 +1,7 @@
 /*
  * @Author: HWZ
  * @Date: 2022-07-01
- * @LastEditTime: 2022-10-17 15:29:52
+ * @LastEditTime: 2022-10-17 17:25:45
  * @LastEditors: hzy
  * @Description: 路由配置页
  */
@@ -18,7 +18,6 @@ const Contact = lazy(() => import('./modules/containers/contact/index')); // 公
 const Services = lazy(() => import('./modules/containers/services/index')); // 产品介绍
 const Gallery = lazy(() => import('./modules/containers/gallery/index')); // 发展历史
 const About = lazy(() => import('./modules/containers/about/index')); // 关于我们
-const NewsMessage = lazy(() => import('./modules/containers/newsMessage/index')); // 新闻咨询 详情
 
 const Footer = lazy(() => import('./modules/component/footer/index')); // 底部组件
 
@@ -36,7 +35,6 @@ const App = () => {
           <Route path='/services' exact element={<Services />} />
           <Route path='/gallery' exact element={<Gallery />} />
           <Route path='/about' exact element={<About />} />
-          <Route path='/newsMessage/:id' exact element={<NewsMessage />} />
         </Routes>
       </div>
 
