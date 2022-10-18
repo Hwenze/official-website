@@ -1,14 +1,18 @@
 #Services {
   .banner {
-    height: 30rem;
+    height: 25rem;
     background: url('/static/images/service-banner.jpg');
+    background-size: cover;
   }
+
   .news {
     width: 100%;
     margin-bottom: 10rem;
+
     .news-top {
       width: 90rem;
       margin: 0 auto;
+
       .message {
         width: 100%;
         height: 10rem;
@@ -16,48 +20,59 @@
         line-height: 10rem;
         font-size: 2rem;
       }
+
       .topTitle {
         width: 100%;
         height: 5rem;
         line-height: 5rem;
         font-size: 1.5rem;
+
         .back {
           float: right;
           line-height: 2rem;
           font-size: 1rem;
           cursor: pointer;
+
           .icon {
             margin-right: 0.3rem;
             font-size: 0.8rem;
           }
         }
+
         .back:hover {
           color: #2c68e9;
         }
       }
+
       .newsDate {
         padding-bottom: 1rem;
         border-bottom: 1px solid rgb(202, 200, 200);
         color: #999;
       }
+
       p {
         margin: 2rem 0;
       }
+
       .news-item {
         padding: 1rem 0;
         cursor: pointer;
         font-size: 1rem;
         border-bottom: 1px solid rgb(202, 200, 200);
+
         .news-title {
           margin-bottom: 1rem;
+
           span {
             float: right;
             color: #999;
           }
         }
+
         .news-title:hover {
           color: #2c68e9;
         }
+
         .news-text {
           line-height: 2rem;
           color: #878787;
