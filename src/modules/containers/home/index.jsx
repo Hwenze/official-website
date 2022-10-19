@@ -1,10 +1,11 @@
 /*
  * @Author: HWZ
  * @Date: 2022-07-04
- * @LastEditTime: 2022-10-18 17:50:50
+ * @LastEditTime: 2022-10-19 15:01:16
  * @LastEditors: HWZ
  * @Description: 公共头部
  */
+
 import { useNavigate } from 'react-router-dom';
 
 import { fullmeasureList, newsList, honorList } from './models';
@@ -13,7 +14,6 @@ import './index.scss';
 
 const Home = () => {
   const navigate = useNavigate();
-
   return (
     <div id='Home'>
       {/* 轮播图 */}
@@ -33,6 +33,7 @@ const Home = () => {
           );
         })}
       </div>
+
       {/* 新闻资讯 */}
       <div className='news-info'>
         <p className='info-title'>新闻资讯</p>
@@ -60,6 +61,22 @@ const Home = () => {
           了解详情
         </div>
       </div>
+
+      {/* 荣誉 */}
+      <div className='honor'>
+        <p className='honor-title'>荣获多项荣誉</p>
+        <div className='honor-box'>
+          {honorList.map((item) => {
+            return (
+              <div className='honor-item' key={item.text}>
+                <img src={item.img} alt='' />
+                <p>{item.text}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
     </div>
   );
 };

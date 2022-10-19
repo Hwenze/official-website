@@ -122,4 +122,38 @@
             cursor: pointer;
         }
     }
+
+    .honor {
+        width: 100%;
+        height: 32rem;
+
+        .honor-title {
+            padding-top: 4.875rem;
+            font-size: 1.625rem;
+            text-align: center;
+        }
+
+        .honor-box {
+            margin-top: 2rem;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-evenly;
+
+            .honor-item {
+
+                img {
+                    width: 21.4375rem;
+                    height: 15.4375rem;
+                }
+
+                p {
+                    font-size: .875rem;
+                    color: #666666;
+                    text-align: center;
+                    margin-top: .625rem;
+                }
+            }
+        }
+
+    }
 }
