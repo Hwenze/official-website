@@ -1,14 +1,16 @@
 /*
  * @Author: HWZ
  * @Date: 2022-07-04
- * @LastEditTime: 2022-10-19 15:01:16
+ * @LastEditTime: 2022-10-19 16:48:47
  * @LastEditors: HWZ
- * @Description: 公共头部
+ * @Description: 首页
  */
 
 import { useNavigate } from 'react-router-dom';
 
 import { fullmeasureList, newsList, honorList } from './models';
+
+import world_map from '../../../static/images/world_map.png';
 
 import './index.scss';
 
@@ -77,6 +79,14 @@ const Home = () => {
         </div>
       </div>
 
+      {/* 地图分布 */}
+      <div className='world-map'>
+        <p className='map-title'>我们的业务遍布世界各地</p>
+        <p className='map-info'>
+          高精度指引下的率，大数据基础上的小数据，从生产生命周期到用户全生命周期解决了企业边际效益递减的问题，从串联到并联，解决了大规模制造与个性化定制间的矛盾从封闭到开放，用户-资源-企业共创共赢共享，非线性矩阵发展
+        </p>
+        <img src={world_map} alt='' />
+      </div>
     </div>
   );
 };

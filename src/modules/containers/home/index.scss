@@ -156,4 +156,34 @@
         }
 
     }
+
+    .world-map {
+        width: 100%;
+        height: 59.1875rem;
+        background-color: #fafafa;
+
+        .map-title {
+            color: #444444;
+            font-size: 1.625rem;
+            text-align: center;
+            padding-top: 4.625rem;
+        }
+
+        .map-info {
+            width: 67.75rem;
+            line-height: 2.1875rem;
+            color: #666666;
+            text-align: center;
+            font-size: .875rem;
+            padding-top: .8125rem;
+            margin: 0 auto;
+        }
+
+        img {
+            display: block;
+            width: 70.1875rem;
+            height: 39.1875rem;
+            margin: 2.75rem auto 0;
+        }
+    }
 }
