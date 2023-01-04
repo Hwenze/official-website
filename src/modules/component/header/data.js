@@ -10,9 +10,9 @@
  */
 
 export const headerList = [
-    { label: '首页', route: '/' },
-    { label: '关于我们', route: '/about' },
-    { label: '项目案例', route: '/contact' },
-    { label: '新闻资讯', route: '/services' },
-    { label: '联系加盟', route: '/gallery' }
+    { label: 'HOME', route: '/' },
+    { label: 'PRICING', route: '/pricing' },
+    { label: 'FQA', route: '/fqa' },
+    { label: 'DASHBOARD', route: '/dashboard' },
+    { label: 'POLICY', route: '/policy' }
 ];

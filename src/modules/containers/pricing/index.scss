@@ -1,0 +1,69 @@
+#Pricing {
+  padding: 6.6875rem 0 .5rem 0;
+  background: #242430;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .box-li {
+    width: 22.75rem;
+    height: 20.625rem;
+    border-radius: 3.25rem;
+    background: #3A3A4E;
+    text-align: center;
+    margin-bottom: 1.875rem;
+
+    &:hover {
+      box-shadow: 0px 0px .625rem 0px #FFFFFFCC;
+    }
+
+    .box-title {
+      width: 100%;
+      height: 4.375rem;
+      border-radius: 3.25rem 3.25rem 0px 0px;
+      background: #8C4FF6;
+
+      p {
+        color: #FFFFFF;
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      .title {
+        font-size: 1.125rem;
+        padding-top: .4rem;
+      }
+    }
+
+    .box-info {
+      padding: 0 1.125rem;
+      text-align: left;
+
+      .chapter {
+        color: #FFFFFF;
+        font-size: .875rem;
+        padding: .875rem 0 .625rem;
+      }
+
+      .detailed {
+        color: #FFFFFF;
+        font-size: .75rem;
+        line-height: .8rem;
+      }
+    }
+
+    .btn {
+      width: 6.25rem;
+      height: 2.125rem;
+      line-height: 1.7rem;
+      border-radius: 3.125rem;
+      border: .125rem solid #FFFFFF;
+      text-align: center;
+      color: #fff;
+      font-size: 1rem;
+      margin: 2rem auto 0;
+      cursor: pointer;
+    }
+  }
+}

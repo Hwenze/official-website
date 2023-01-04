@@ -6,15 +6,49 @@
  * @Description: 底部组件
  */
 
+import { useNavigate } from 'react-router-dom';
+
+import { footerList, useList, imgList } from './data';
+
 import './index.scss';
 
 const Footed = () => {
-  return <div id='Footed'>
-    <span>联系邮箱: xxx@.com</span>
-    <span>QQ：177488228</span>
-    <span>联系地址：XXX省XXX市XXX县XXX路XXX号</span>
-    <span>联系电话：020-000000    000-000000</span>
-  </div>;
+  const navigate = useNavigate();
+
+  return (
+    <div id='Footed'>
+      <span className='site-name'>BRICK PROXY</span>
+
+      <div className='independent navigation'>
+        {footerList.map((item) => {
+          return (
+            <p key={item.label} onClick={() => navigate(item.route)}>
+              {item.label}
+            </p>
+          );
+        })}
+      </div>
+
+      <div className='independent use-list'>
+        {useList.map((item) => {
+          return (
+            <p key={item.label} onClick={() => navigate(item.route)}>
+              {item.label}
+            </p>
+          );
+        })}
+      </div>
+
+      <div className='independent'>
+        <div className='img-box'>
+          {imgList.map((item) => {
+            return <img src={item.img} alt='' />;
+          })}
+        </div>
+        <span>Email：xxxxx@xxx.com</span>
+      </div>
+    </div>
+  );
 };
 
 export default Footed;

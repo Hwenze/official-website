@@ -1,0 +1,47 @@
+#Fqa {
+  background: #242430;
+  padding: 4.3125rem 0 .625rem 0;
+
+  .content-box {
+    width: 100%;
+    height: 8.75rem;
+    margin-bottom: .625rem;
+    background: #3A3A4E;
+    padding: 1.375rem 4.5625rem 0 4rem;
+    display: flex;
+    align-items: flex-start;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    img {
+      width: 3rem;
+      height: 4.375rem;
+      margin-right: 1.5rem;
+    }
+
+    &:nth-child(n+10) {
+      img {
+        width: 6rem;
+      }
+    }
+
+    .content {
+      padding-top: .15rem;
+
+      .content-title {
+        color: #FFFFFF;
+        font-weight: semibold;
+        font-size: 1.125rem;
+      }
+
+      .content-text {
+        color: #B6B6B6;
+        font-weight: regular;
+        font-size: .875rem;
+        margin-top: .375rem;
+      }
+    }
+  }
+}

@@ -1,91 +1,88 @@
 #Home {
+    text-align: center;
+    background-color: #242430;
+
     .banner {
-        height: 50rem;
-        background: url('/static/images/banner.jpg');
+        height: 34.3125rem;
+        background-image: url('/static/images/banner.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        z-index: 1;
+
+        .banner-btn {
+            width: 9.1037rem;
+            height: 2.5rem;
+            margin: 20.3075rem auto 0;
+            cursor: pointer;
+        }
     }
 
     .fullmeasureOuterContent {
-        width: 100%;
-        height: 13.68rem;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-evenly;
+        width: 75.5rem;
+        height: 23.5rem;
+        margin: -7.5rem auto 0;
+        z-index: 2;
+        position: relative;
 
-        .fullmeasureOuter-item {
-            display: flex;
-
-            img {
-                width: 2.75rem;
-                height: 2.87rem;
-            }
-
-            .copywriting {
-                width: 14.5rem;
-                margin-left: 1rem;
-
-                p {
-                    font-size: 1rem;
-                    color: #444;
-                    line-height: 2.18rem;
-                }
-
-                span {
-                    display: inline-block;
-                    font-size: .87rem;
-                    color: #666;
-                    line-height: 2.18rem;
-                }
-            }
-        }
-    }
-
-    .news-info {
-        width: 100%;
-        height: 34.3rem;
-
-        .info-title {
-            font-size: 1.62rem;
-            color: #444;
-            text-align: center;
-            padding-top: 3rem;
+        .title {
+            width: 75.5rem;
+            height: 5.6875rem;
+            line-height: 5.6875rem;
+            background: #1B1B2B;
+            color: #fff;
+            font-weight: semibold;
+            font-size: 1.75rem;
         }
 
-        .content-box {
-            width: 75rem;
-            margin: 0 auto;
+        .content {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin-top: 3rem;
+            justify-content: center;
+            background: #fff;
 
-            .content-list {
-                width: 32.3%;
-                height: 21.5rem;
-                border-radius: .37rem;
-                box-shadow: 0 0 .93rem 0 rgb(0 0 0 / 10%);
-                overflow: hidden;
-                background: #fff;
-                cursor: pointer;
+            .fullmeasureOuter-item {
+                width: 24.8%;
+                height: 17.25rem;
+                padding-top: 2.0625rem;
+                position: relative;
 
                 img {
-                    width: 100%;
-                    height: 12.5rem;
+                    width: 1.875rem;
+                    height: 1.875rem;
                 }
 
-                p {
-                    font-size: 1rem;
-                    color: #333;
-                    padding: .93rem;
+                .item-title {
+                    color: #303133;
+                    font-weight: semibold;
+                    font-size: 1.25rem;
+                    margin-top: .75rem;
                 }
 
-                span {
+                .item-text {
+                    width: 12.8125rem;
+                    color: #606266;
+                    font-weight: regular;
+                    font-size: .75rem;
+                    margin: .875rem auto 0;
+                }
+
+                &:after {
+                    content: ' ';
                     display: block;
-                    height: 4.87rem;
-                    line-height: 1.62rem;
-                    color: #878787;
-                    overflow: hidden;
-                    font-size: .87rem;
-                    padding: 0 .93rem;
+                    width: 1px;
+                    height: 9.6875rem;
+                    position: absolute;
+                    top: 5rem;
+                    right: 0;
+                    background: #000000;
+                    transform: rotate(15deg);
+                }
+
+                &:last-child {
+                    &:after {
+                        display: none;
+                    }
                 }
             }
         }
@@ -93,97 +90,63 @@
 
     .community {
         width: 100%;
-        height: 20rem;
-        background: url('/static/images/community_bg.jpg');
+        height: 23.6875rem;
+        background-color: #fff;
+        background-image: url('/static/images/decorative.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: -11.5rem;
+        z-index: 1;
+        position: static;
 
         .community-title {
-            font-size: 1.625rem;
-            text-align: center;
-            color: #fff;
-            padding-top: 4.0625rem;
-        }
+            width: 20rem;
+            height: 1.875rem;
+            color: #242430;
+            font-weight: bold;
+            font-size: 2.25rem;
+            padding-top: 12.25rem;
+            position: relative;
+            margin: 0 auto;
 
-        .community-info {
-            font-size: .875rem;
-            text-align: center;
-            color: #fff;
-            padding-top: 1.8rem;
-        }
+            &:before {
+                content: '';
+                display: block;
+                width: 1.3062rem;
+                height: 1.5rem;
+                background-repeat: no-repeat;
+                background-size: 1rem 1.1rem;
+                background-image: url('/static/images/site.png');
+                position: absolute;
+                top: 13.48rem;
+                left: 0;
+            }
 
-        .community-btn {
-            width: 7.875rem;
-            height: 2.75rem;
-            line-height: 2.75rem;
-            color: #fff;
-            background: #8b0eea;
-            font-size: .875rem;
-            text-align: center;
-            margin: 3rem auto 0;
-            cursor: pointer;
-        }
-    }
-
-    .honor {
-        width: 100%;
-        height: 32rem;
-
-        .honor-title {
-            padding-top: 4.875rem;
-            font-size: 1.625rem;
-            text-align: center;
-        }
-
-        .honor-box {
-            margin-top: 2rem;
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-evenly;
-
-            .honor-item {
-
-                img {
-                    width: 21.4375rem;
-                    height: 15.4375rem;
-                }
-
-                p {
-                    font-size: .875rem;
-                    color: #666666;
-                    text-align: center;
-                    margin-top: .625rem;
-                }
+            &:after {
+                content: '';
+                display: block;
+                width: 1.3062rem;
+                height: 1.5rem;
+                background-repeat: no-repeat;
+                background-size: 1rem 1.1rem;
+                background-image: url('/static/images/site.png');
+                position: absolute;
+                top: 13.2rem;
+                right: 0;
+                transform: rotate(180deg);
             }
         }
 
-    }
+        .community-brand {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5.37rem 4.425rem 0;
 
-    .world-map {
-        width: 100%;
-        height: 59.1875rem;
-        background-color: #fafafa;
-
-        .map-title {
-            color: #444444;
-            font-size: 1.625rem;
-            text-align: center;
-            padding-top: 4.625rem;
-        }
-
-        .map-info {
-            width: 67.75rem;
-            line-height: 2.1875rem;
-            color: #666666;
-            text-align: center;
-            font-size: .875rem;
-            padding-top: .8125rem;
-            margin: 0 auto;
-        }
-
-        img {
-            display: block;
-            width: 70.1875rem;
-            height: 39.1875rem;
-            margin: 2.75rem auto 0;
+            img {
+                width: 7.25rem;
+                height: 3.0625rem;
+            }
         }
     }
 }

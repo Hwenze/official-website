@@ -16,7 +16,7 @@ const docEle = document.documentElement;
 
 const fn = function () {
   const width = window.innerWidth;
-  width && (docEle.style.fontSize = 16 * (width / 1920) + 'px');
+  width && (docEle.style.fontSize = 16 * (width / 1280) + 'px');
 };
 
 window.onresize = fn;

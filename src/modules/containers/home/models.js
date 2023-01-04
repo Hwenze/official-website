@@ -9,30 +9,25 @@
  * Copyright (c) 2022 by SIE, All Rights Reserved. 
  */
 
-import personal from '../../../static/images/personal.png';
-import enterprise from '../../../static/images/enterprise.png';
-import data from '../../../static/images/data.png';
-import news1 from '../../../static/images/news1.png';
-import news2 from '../../../static/images/news2.png';
-import news3 from '../../../static/images/news3.png';
-import honor1 from '../../../static/images/2014.png';
-import honor2 from '../../../static/images/2016.png';
-import honor3 from '../../../static/images/2018.png';
+import Stability from '../../../static/images/icon-Stability.png';
+import Speed from '../../../static/images/icon-Speed.png';
+import Quality from '../../../static/images/icon-Quality.png';
+import Support from '../../../static/images/icon-Support.png';
+
+import brand_icon1 from '../../../static/images/brand_icon1.png';
+import brand_icon2 from '../../../static/images/brand_icon2.png';
+import brand_icon3 from '../../../static/images/brand_icon3.png';
+import brand_icon4 from '../../../static/images/brand_icon4.png';
+import brand_icon5 from '../../../static/images/brand_icon5.png';
+import brand_icon6 from '../../../static/images/brand_icon6.png';
 
 export const fullmeasureList = [
-    { img: personal, title: '个人用户', text: '模块制定、众创定制、专属定制满足您的多种个性化需求' },
-    { img: enterprise, title: '企业用户', text: '为您提供跨行业跨领域的多种企业解决方案及云服务' },
-    { img: data, title: '平台支撑', text: '平台为您提供各种开发工具，数据化运营，持续创新' },
+    { img: Stability, title: 'Stability', text: 'Our pools are consistently refreshed to make sure you are provided with undoubted reliability and we guarantee high-speed performance to see you through a release successfully!' },
+    { img: Speed, title: 'Speed', text: 'Reliability equipped with lightning fast response speeds.' },
+    { img: Quality, title: 'Quality', text: 'Our proxies are entirely residential through real IP devices，and we have already helped a great deal of customers achieve their goals.' },
+    { img: Support, title: '7/24 Support', text: "Join our Discord server to get quick support and helpful solutions to any issues you run into! We're here to help you from day to night!" },
 ];
 
-export const newsList = [
-    { img: news1, title: '企业IT规划发展的三个时期', text: 'IT规划不是摆设，它必须在得到切实可行的实施之后才能发挥出促进业务、提升管理的作用，否则就是一堆废纸。因此，“落地' },
-    { img: news2, title: '前苹果高管: 微软本可避免WP失败', text: '日前，Medium专栏作者、前苹果高管Jean-Louis Gassée在一篇关于微软Windows Phone的' },
-    { img: news3, title: '看3D电影能让你的大脑更灵活', text: '看3D电影让人享受新奇的视觉体验，英国伦敦戈德史密斯大学一项研究显示，这还有助脑力提升研究人员招募100多名志愿者' },
-];
-
-export const honorList = [
-    { img: honor1, text: '2014XXX互联网年度产品' },
-    { img: honor2, text: '2016XXX互联网年度产品' },
-    { img: honor3, text: '2018XXX互联网年度产品' }
+export const brandList = [
+    brand_icon1, brand_icon2, brand_icon3, brand_icon4, brand_icon5, brand_icon6
 ];

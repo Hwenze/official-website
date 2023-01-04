@@ -1,0 +1,36 @@
+#Policy {
+  padding-top: 4.3125rem;
+  background: #242430;
+  display: flex;
+  justify-content: center;
+
+  .content-box {
+    margin: 4rem 0;
+    width: 72rem;
+    padding: 1.875rem 3.875rem .9375rem;
+    background: #3A3A4E;
+    overflow: hidden;
+
+    .title {
+      color: #FFFFFF;
+      font-weight: semibold;
+      font-size: 1.75rem;
+      text-align: center;
+      margin-bottom: 1.875rem;
+    }
+
+    p {
+      color: #B6B6B6;
+      font-weight: regular;
+      font-size: .875rem;
+      line-height: 1.25rem;
+      margin-bottom: .9375rem;
+      word-wrap: break-word;
+      word-break: break-all;
+    }
+
+    .chapter {
+      color: #FFFFFF;
+    }
+  }
+}

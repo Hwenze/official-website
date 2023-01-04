@@ -1,0 +1,41 @@
+#Login {
+    width: 100%;
+    background: #242430;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .login-box {
+        width: 40rem;
+        height: 28.75rem;
+        border-radius: 1.25rem;
+        background: #3A3A4E;
+    }
+
+    img {
+        width: 11.61rem;
+        height: 5.13rem;
+        margin: 5.67rem auto 0;
+    }
+
+    p {
+        color: #FFFFFF;
+        font-size: 2.25rem;
+        text-align: center;
+        margin-top: 1.77rem;
+    }
+
+    .login-btn {
+        color: #FFFFFF;
+        width: 18.75rem;
+        height: 3.75rem;
+        line-height: 3.75rem;
+        border-radius: 3.13rem;
+        background: #A36DFF;
+        text-align: center;
+        font-size: 1.25rem;
+        margin: 3.72rem auto 0;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,227 @@
+#Dashboard {
+  padding: 6.8125rem 4rem 2.5rem;
+  background: #242430;
+
+  .action-bar {
+    display: inline-block;
+    vertical-align: top;
+    width: 28.8125rem;
+    height: 42.75rem;
+    border-radius: 1.25rem;
+    background: #3A3A4E;
+    position: relative;
+    margin-right: 1.25rem;
+
+    .bar-top {
+      height: 5.125rem;
+      border-bottom: 1px solid #6C6C6C;
+      padding: 0 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .entering {
+        display: inline-block;
+        width: 6.25rem;
+        height: 1.875rem;
+        border-radius: 3.125rem;
+        background: #5C5C7B;
+        color: #fff;
+      }
+
+      .tips {
+        display: inline-block;
+        width: 6.25rem;
+        height: 1.875rem;
+        line-height: 1.875rem;
+        border-radius: 3.125rem;
+        background: #5C5C7B;
+        color: #B6B6B6;
+        font-size: .875rem;
+        text-align: center;
+        margin-left: .625rem;
+      }
+
+      .bar-btn {
+        width: 10.25rem;
+        height: 1.875rem;
+        line-height: 1.875rem;
+        border-radius: 3.125rem;
+        background: #A36DFF;
+        color: #FFFFFF;
+        font-size: .875rem;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+    }
+
+    .bar-content {
+      padding: 1.25rem;
+
+      p {
+        color: #FFFFFF;
+        font-size: 1rem;
+        text-align: left;
+      }
+    }
+
+    .bar-footer {
+      width: 100%;
+      height: 5.0625rem;
+      border-top: 1px solid #6C6C6C;
+      padding: 0 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  .display-bar {
+    display: inline-block;
+    vertical-align: top;
+
+    .active-plan {
+      width: 41.23rem;
+      height: 15.25rem;
+      border-radius: 1.25rem;
+      background: #3A3A4E;
+
+      .plan-top {
+        height: 4.5625rem;
+        line-height: 4.5625rem;
+        border-bottom: 1px solid #6C6C6C;
+        color: #FFFFFF;
+        font-size: 1rem;
+        padding: 0 1.25rem;
+      }
+
+      .plan-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.25rem;
+
+        .content {
+          width: 50%;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          position: relative;
+
+          &:first-child {
+            &::before {
+              content: '';
+              position: absolute;
+              right: 1.1rem;
+              display: block;
+              width: 1px;
+              height: 120%;
+              background: #6C6C6C;
+            }
+          }
+
+          &:last-child {
+            padding-left: 1.1rem;
+          }
+
+          .content-li {
+            width: 50%;
+            margin-bottom: 1.25rem;
+
+            &:nth-child(n+3) {
+              margin-bottom: 0;
+            }
+
+            .title {
+              color: #B6B6B6;
+              font-size: .875rem;
+              line-height: .75rem;
+            }
+
+            .text {
+              color: #FFFFFF;
+              font-size: .875rem;
+              line-height: .75rem;
+              margin-top: .25rem;
+            }
+          }
+        }
+      }
+    }
+
+    .orders-history {
+      width: 41.23rem;
+      height: 26.25rem;
+      border-radius: 1.25rem;
+      background: #3A3A4E;
+      margin-top: 1.25rem;
+      position: relative;
+
+      .history-top {
+        height: 4.5625rem;
+        line-height: 4.5625rem;
+        border-bottom: 1px solid #6C6C6C;
+        color: #FFFFFF;
+        font-size: 1rem;
+        padding: 0 1.25rem;
+      }
+
+      .table {
+        padding: 1.25rem;
+
+        .table-header {
+          display: flex;
+          align-items: center;
+
+          span {
+            display: block;
+            min-width: 4.25rem;
+            color: #FFFFFF;
+            font-size: .875rem;
+          }
+        }
+      }
+
+      .history-footer {
+        width: 100%;
+        height: 5.0625rem;
+        border-top: 1px solid #6C6C6C;
+        padding: 0 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+  }
+
+  .footer-btn {
+    width: 5rem;
+    height: 1.875rem;
+    line-height: 1.5rem;
+    border-radius: 3.125rem;
+    border: .125rem solid #A36DFF;
+    text-align: center;
+    color: #A36DFF;
+    font-size: .875rem;
+    margin-left: .625rem;
+    cursor: pointer;
+  }
+
+  .long-btn {
+    width: 6.25rem;
+  }
+}
