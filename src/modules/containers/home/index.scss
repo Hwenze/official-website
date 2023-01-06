@@ -4,7 +4,7 @@
 
     .banner {
         height: 34.3125rem;
-        background-image: url('/static/images/banner.png');
+        background-image: url('/static/svg/banner.svg');
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
@@ -92,7 +92,7 @@
         width: 100%;
         height: 23.6875rem;
         background-color: #fff;
-        background-image: url('/static/images/decorative.png');
+        background-image: url('/static/svg/decorative.svg');
         background-repeat: no-repeat;
         background-size: cover;
         margin-top: -11.5rem;
@@ -116,7 +116,7 @@
                 height: 1.5rem;
                 background-repeat: no-repeat;
                 background-size: 1rem 1.1rem;
-                background-image: url('/static/images/site.png');
+                background-image: url('/static/svg/site.svg');
                 position: absolute;
                 top: 13.48rem;
                 left: 0;
@@ -129,7 +129,7 @@
                 height: 1.5rem;
                 background-repeat: no-repeat;
                 background-size: 1rem 1.1rem;
-                background-image: url('/static/images/site.png');
+                background-image: url('/static/svg/site.svg');
                 position: absolute;
                 top: 13.2rem;
                 right: 0;
@@ -141,11 +141,10 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 5.37rem 4.425rem 0;
+            padding: 4.37rem 4.425rem 0;
 
             img {
-                width: 7.25rem;
-                height: 3.0625rem;
+                width: 100%;
             }
         }
     }

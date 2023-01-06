@@ -41,8 +41,8 @@ const Footed = () => {
 
       <div className='independent'>
         <div className='img-box'>
-          {imgList.map((item) => {
-            return <img src={item.img} alt='' />;
+          {imgList.map((item, index) => {
+            return <img src={item.img} key={index} alt='' />;
           })}
         </div>
         <span>Email：xxxxx@xxx.com</span>

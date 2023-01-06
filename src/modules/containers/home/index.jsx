@@ -9,8 +9,9 @@
 import { lazy } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import PURCHASE from '../../../static/images/PURCHASE.png';
-import { fullmeasureList, brandList } from './models';
+import PURCHASE from '../../../static/svg/PURCHASE.svg';
+import Group from '../../../static/svg/Group.svg';
+import { fullmeasureList } from './models';
 
 import './index.scss';
 
@@ -47,9 +48,7 @@ const Home = () => {
         <div className='community'>
           <p className='community-title'>SUPPORT SITE</p>
           <div className='community-brand'>
-            {brandList.map((item) => {
-              return <img src={item} alt='' />;
-            })}
+            <img src={Group} alt='' />
           </div>
         </div>
       </div>

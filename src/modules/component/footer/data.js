@@ -9,9 +9,9 @@
  * Copyright (c) 2022 by SIE, All Rights Reserved. 
  */
 
-import twitter from '../../../static/images/twitter.png';
-import anonymous from '../../../static/images/anonymous.png';
-import mail from '../../../static/images/mail.png';
+import twitter from '../../../static/svg/twitter.svg';
+import anonymous from '../../../static/svg/anonymous.svg';
+import mail from '../../../static/svg/mail.svg';
 
 export const footerList = [
     { label: 'HOME', route: '/' },

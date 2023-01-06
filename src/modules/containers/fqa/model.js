@@ -6,18 +6,18 @@
  * @LastEditTime: 2022-10-17 17:54:51
  */
 
-import one from '../../../static/images/fqa/one.png';
-import two from '../../../static/images/fqa/two.png';
-import three from '../../../static/images/fqa/three.png';
-import four from '../../../static/images/fqa/four.png';
-import five from '../../../static/images/fqa/five.png';
-import six from '../../../static/images/fqa/six.png';
-import seven from '../../../static/images/fqa/seven.png';
-import eight from '../../../static/images/fqa/eight.png';
-import nine from '../../../static/images/fqa/nine.png';
-import ten from '../../../static/images/fqa/ten.png';
-import eleven from '../../../static/images/fqa/eleven.png';
-import twelve from '../../../static/images/fqa/twelve.png';
+import one from '../../../static/svg/fqa/one.svg';
+import two from '../../../static/svg/fqa/two.svg';
+import three from '../../../static/svg/fqa/three.svg';
+import four from '../../../static/svg/fqa/four.svg';
+import five from '../../../static/svg/fqa/five.svg';
+import six from '../../../static/svg/fqa/six.svg';
+import seven from '../../../static/svg/fqa/seven.svg';
+import eight from '../../../static/svg/fqa/eight.svg';
+import nine from '../../../static/svg/fqa/nine.svg';
+import ten from '../../../static/svg/fqa/ten.svg';
+import eleven from '../../../static/svg/fqa/eleven.svg';
+import twelve from '../../../static/svg/fqa/twelve.svg';
 
 export const fqaList = [
     { img: one, title: 'Q.How do I activate my plan?', text: 'Do nothing, follow your purchase for the activate.' },

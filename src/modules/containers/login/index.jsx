@@ -9,7 +9,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import bigLogo from '../../../static/images/big_logo.png';
+import bigLogo from '../../../static/svg/big_logo.svg';
 
 import './index.scss';
 

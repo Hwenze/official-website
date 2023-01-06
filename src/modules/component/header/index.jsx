@@ -6,17 +6,50 @@
  * @Description: 公共头部
  */
 
+import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { notification } from 'antd';
 
-import logo from '../../../static/images/logo.png';
+import { localStorage } from '../../../utils/utils.js';
+
+import logo from '../../../static/svg/logo.svg';
 
 import { headerList } from './data';
+import { getToken } from './server';
 
 import './index.scss';
 
 const Header = () => {
-  const location = useLocation();
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+  let showLogin = localStorage.getStorage('token');
+
+  // 路由变化判断
+  useEffect(() => {
+    if (window.location.search.indexOf('code') !== -1) {
+      const code = window.location.search.split('=')[1];
+      getToken(
+        { code },
+        (res) => {
+          if (res && res.code === 200) {
+            localStorage.setStorage('token', res.token);
+            showLogin = true;
+          } else {
+            notification.error({
+              message: 'system error',
+              description: (res && res.message) || 'Your login has expired',
+            });
+          }
+        },
+        () => {
+          notification.error({
+            message: 'system error',
+            description: 'Please contact the administrator',
+          });
+        }
+      );
+    }
+  }, [pathname]);
 
   return (
     <div id='Header'>
@@ -26,9 +59,7 @@ const Header = () => {
         {headerList.map((item) => {
           return (
             <div
-              className={`list-item ${
-                location.pathname === item.route && 'active'
-              }`}
+              className={`list-item ${pathname === item.route && 'active'}`}
               key={item.label}
               onClick={() => navigate(item.route)}
             >
@@ -39,14 +70,14 @@ const Header = () => {
       </div>
 
       <div className='user-box'>
-        <img className='user-avatar' src={logo} alt="" />
+        {showLogin && <img className='user-avatar' src={logo} alt='' />}
         <div
           className='btn'
           onClick={() => {
             window.location.replace(window.location.origin + '/login');
           }}
         >
-          LOG IN
+          {showLogin ? 'LOG OUT' : 'LOG IN'}
         </div>
       </div>
     </div>
