@@ -19,12 +19,13 @@ const Footer = lazy(() => import('../../component/footer/index')); // 底部组�
 
 const Home = () => {
   const navigate = useNavigate();
+  
   return (
     <>
       <div id='Home'>
         {/* 轮播图 */}
         <div className='banner'>
-          <img className='banner-btn' src={PURCHASE} alt='' />
+          <img className='banner-btn' src={PURCHASE} onClick={() => navigate('/pricing')} alt='' />
         </div>
 
         {/* 平台介绍 */}

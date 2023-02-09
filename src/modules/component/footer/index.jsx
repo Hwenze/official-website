@@ -42,10 +42,10 @@ const Footed = () => {
       <div className='independent'>
         <div className='img-box'>
           {imgList.map((item, index) => {
-            return <img src={item.img} key={index} alt='' />;
+            return <img src={item.img} key={index} onClick={() => window.open(item.route)} alt='' />;
           })}
         </div>
-        <span>Email：xxxxx@xxx.com</span>
+        <span>Email：support@brickproxy.net</span>
       </div>
     </div>
   );

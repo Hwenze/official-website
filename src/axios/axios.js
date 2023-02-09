@@ -6,6 +6,32 @@ const token = localStorage.getStorage('token') || '';
 const delfaultTimeout = 10 * 1000;
 axios.defaults.baseURL = 'https://www.brickproxy.net';
 
+/**
+ * http response 拦截器
+ */
+axios.interceptors.response.use(
+  (response) => {
+    if (response && response.status === 200) {
+      return response;
+    } else {
+      return {
+        data: {
+          code: 401,
+          message: "token过期"
+        },
+        status: 401
+      };
+    }
+  },
+  (error) => {
+    console.log(error, 2222)
+    const err = JSON.parse(JSON.stringify(error));
+    if (err.message.indexOf('401') !== -1) {
+      // window.location.href = 'https://discord.com/api/oauth2/authorize?client_id=782123824727588864&redirect_uri=https%3A%2F%2Fmushroomproxy.com&response_type=code&scope=identify%20guilds.join'
+    }
+  }
+);
+
 // 抽出方法
 const toResponeFn = (response, sucessFn, failFn) => {
   if (response.status === 200) {

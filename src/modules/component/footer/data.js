@@ -21,14 +21,14 @@ export const footerList = [
 ];
 
 export const useList = [
-    { label: 'Terms of Use', route: '/' },
+    { label: 'Terms of Use', route: '/policy' },
     { label: 'Privacy Policy', route: '/policy' },
-    { label: 'Terms of Use', route: '/' },
+    { label: 'Refund policy', route: '/policy' },
 ];
 
 export const imgList = [
-    { img: twitter, route: '' },
-    { img: anonymous, route: '' },
-    { img: mail, route: '' }
+    { img: twitter, route: 'https://twitter.com/BrickProxy' },
+    // { img: anonymous, route: '' },
+    // { img: mail, route: '' }
 ];
 

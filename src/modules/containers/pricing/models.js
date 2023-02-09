@@ -1,6 +1,6 @@
 export const pricingList = [
     {
-        title: '6GB Monthly',
+        title: '5GB Monthly - 60$',
         explain: '$12/G Residential Pl',
         generalFeatures: [
             '-Endless number of generations, generate 5000 each time.',
@@ -14,7 +14,7 @@ export const pricingList = [
         ]
     },
     {
-        title: '12GB Monthly',
+        title: '10GB Monthly - 115$',
         explain: '$11/G Residential Pl',
         generalFeatures: [
             '-Endless number of generations, generate 5000 each time.',
@@ -28,7 +28,7 @@ export const pricingList = [
         ]
     },
     {
-        title: '24GB Monthly',
+        title: '20GB Monthly - 220$',
         explain: '$10/G Residential Pl',
         generalFeatures: [
             '-Endless number of generations, generate 5000 each time.',
@@ -42,7 +42,7 @@ export const pricingList = [
         ]
     },
     {
-        title: '36GB Monthly',
+        title: '30GB Monthly - 315$',
         explain: '$9/G Residential Pl',
         generalFeatures: [
             '-Endless number of generations, generate 5000 each time.',
@@ -56,7 +56,7 @@ export const pricingList = [
         ]
     },
     {
-        title: '72GB Monthly',
+        title: '50GB Monthly - 500$',
         explain: '$8.5/G Residential Pl',
         generalFeatures: [
             '-Endless number of generations, generate 5000 each time.',
@@ -70,7 +70,7 @@ export const pricingList = [
         ]
     },
     {
-        title: '72GB Monthly',
+        title: '75GB Monthly - 675$',
         explain: '$8.5/G Residential Pl',
         generalFeatures: [
             '-Endless number of generations, generate 5000 each time.',

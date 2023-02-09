@@ -1,6 +1,8 @@
 #Dashboard {
   padding: 6.8125rem 4rem 2.5rem;
   background: #242430;
+  display: flex;
+  justify-content: space-between;
 
   .action-bar {
     display: inline-block;
@@ -10,7 +12,6 @@
     border-radius: 1.25rem;
     background: #3A3A4E;
     position: relative;
-    margin-right: 1.25rem;
 
     .bar-top {
       height: 5.125rem;
@@ -20,26 +21,32 @@
       align-items: center;
       justify-content: space-between;
 
-      .entering {
-        display: inline-block;
-        width: 6.25rem;
-        height: 1.875rem;
-        border-radius: 3.125rem;
-        background: #5C5C7B;
-        color: #fff;
-      }
+      .select-box {
+        display: flex;
+        align-items: center;
 
-      .tips {
-        display: inline-block;
-        width: 6.25rem;
-        height: 1.875rem;
-        line-height: 1.875rem;
-        border-radius: 3.125rem;
-        background: #5C5C7B;
-        color: #B6B6B6;
-        font-size: .875rem;
-        text-align: center;
-        margin-left: .625rem;
+        .select-option {
+          width: 6.25rem !important;
+          height: 1.875rem !important;
+          margin-right: .625rem;
+
+          .ant-select-selector {
+            width: 6.25rem !important;
+            height: 1.875rem !important;
+            box-shadow: -0.01rem 0rem 0.05rem 0.01rem rgba(182, 182, 182, 0.5) !important;
+            border-radius: 3.125rem !important;
+            background: #5C5C7B;
+          }
+        }
+
+        .entering {
+          display: inline-block;
+          width: 6.25rem;
+          height: 1.875rem;
+          border-radius: 3.125rem;
+          background: #5C5C7B;
+          color: #fff;
+        }
       }
 
       .bar-btn {
@@ -190,6 +197,17 @@
             min-width: 4.25rem;
             color: #FFFFFF;
             font-size: .875rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+
+        .table-content {
+          margin-bottom: .3rem;
+
+          .table-column {
+            font-size: .7rem;
           }
         }
       }
@@ -224,4 +242,8 @@
   .long-btn {
     width: 6.25rem;
   }
+}
+
+.ant-select-dropdown {
+  width: 10rem !important;
 }

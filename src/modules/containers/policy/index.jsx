@@ -14,9 +14,17 @@ const Policy = () => {
   return (
     <div id='Policy'>
       <div className='content-box'>
-        <p className='title'>Privacy policy</p>
         {policyList.map((item) => {
-          return <p className={`${item.isTitle && 'chapter'}`}>{item.text}</p>
+          return (
+            <>
+              <p className='title'>{item.title}</p>
+              {item.list.map((it) => {
+                return (
+                  <p className={`${it.isTitle && 'chapter'}`}>{it.text}</p>
+                );
+              })}
+            </>
+          );
         })}
       </div>
     </div>

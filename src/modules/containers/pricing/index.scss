@@ -67,3 +67,56 @@
     }
   }
 }
+
+.Pricing-Modal-Box {
+  .ant-modal-content {
+    background: rgba(255, 255, 255, 0);
+
+    .ant-modal-body {
+      padding: 0;
+    }
+  }
+}
+
+#Pricing-Modal {
+  height: 15rem;
+  border-radius: 1rem;
+  background: #3A3A4E;
+  box-shadow: 0px 0px .625rem 0px #FFFFFFCC;
+  padding: 3.5rem 4rem;
+  text-align: center;
+
+  p {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 2.5rem;
+  }
+
+  .entering-box {
+    width: 15rem;
+    height: 2rem;
+    border-radius: 3.125rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    .modal-entering {
+      height: 2rem;
+      display: inline-block;
+      background: #5C5C7B;
+      color: #fff;
+    }
+
+    .entering-btn {
+      width: 4.5rem;
+      height: 2rem;
+      line-height: 2rem;
+      background: #8C4FF6;
+      cursor: pointer;
+      color: #fff;
+    }
+  }
+
+}
