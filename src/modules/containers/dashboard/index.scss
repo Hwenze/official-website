@@ -52,8 +52,8 @@
       .bar-btn {
         width: 10.25rem;
         height: 1.875rem;
-        line-height: 1.875rem;
         border-radius: 3.125rem;
+        border: none;
         background: #A36DFF;
         color: #FFFFFF;
         font-size: .875rem;
@@ -71,15 +71,26 @@
       }
     }
 
-    .bar-content {
+    .content-box {
       padding: 1.25rem;
+      height: 32rem;
+      overflow: hidden;
 
-      p {
-        color: #FFFFFF;
-        font-size: 1rem;
-        text-align: left;
+      .bar-content {
+        width: 28.5rem;
+        height: 32rem;
+        overflow: scroll;
+
+        span {
+          display: block;
+          white-space: pre-wrap;
+          color: #FFFFFF;
+          font-size: 1rem;
+          text-align: left;
+        }
       }
     }
+
 
     .bar-footer {
       width: 100%;

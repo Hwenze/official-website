@@ -15,7 +15,7 @@ import { localStorage } from '../../../utils/utils.js';
 import logo from '../../../static/svg/logo.svg';
 
 import { headerList } from './data';
-import { getToken } from './server';
+import { getToken, getUserName } from './server';
 
 import './index.scss';
 
@@ -24,32 +24,63 @@ const Header = () => {
   const { pathname } = useLocation();
   let showLogin = localStorage.getStorage('token');
 
+  // 获取用户信息
+  const getUserNameFn = () => {
+    getUserName(
+      {},
+      (res) => {
+        if (res && res.code === 200) {
+          localStorage.setStorage('userInfo', res.result);
+        } else {
+          notification.error({
+            message: 'system error',
+            description: (res && res.message) || 'Your login has expired',
+          });
+        }
+      },
+      () => {
+        notification.error({
+          message: 'system error',
+          description: 'Please contact the administrator',
+        });
+      }
+    );
+  };
+
   // 路由变化判断
   useEffect(() => {
     if (window.location.search.indexOf('code') !== -1) {
-      const code = window.location.search.split('=')[1];
+      const code = window.location.search.split('=')[1].split('#')[0];
+
       getToken(
         { code },
         (res) => {
           if (res && res.code === 200) {
             localStorage.setStorage('token', res.token);
             showLogin = true;
-          } else {
-            notification.error({
-              message: 'system error',
-              description: (res && res.message) || 'Your login has expired',
-            });
+            setTimeout(() => {
+              navigate('/');
+            }, 500);
           }
         },
-        () => {
-          notification.error({
-            message: 'system error',
-            description: 'Please contact the administrator',
-          });
-        }
+        () => {}
       );
     }
   }, [pathname]);
+
+  // 登入登出
+  const loginFn = () => {
+    if (showLogin) {
+      localStorage.delStorage('token');
+      navigate('/');
+    } else {
+      window.location.replace(window.location.origin + '/login');
+    }
+  };
+
+  useEffect(() => {
+    if (showLogin) getUserNameFn();
+  }, []);
 
   return (
     <div id='Header'>
@@ -74,7 +105,7 @@ const Header = () => {
         <div
           className='btn'
           onClick={() => {
-            window.location.replace(window.location.origin + '/login');
+            loginFn();
           }}
         >
           {showLogin ? 'LOG OUT' : 'LOG IN'}

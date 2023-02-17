@@ -7,18 +7,22 @@
  */
 
 import { useState } from 'react';
-import { Input, Modal } from 'antd';
+import { Input, Modal, Button } from 'antd';
 
 import { pricingList } from './models';
+import { getProxyBuy, getDiscountKeyInfo } from './server';
 
 import './index.scss';
 
 const Pricing = () => {
   const [code, setCode] = useState('');
+  const [shopType, setShopType] = useState(''); // 商品类型
+  const [applyLoad, setApplyLoad] = useState(false); // 折扣loading
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const showModal = () => {
+  const showModal = (type) => {
     setIsModalOpen(true);
+    setShopType(type);
   };
 
   const handleOk = () => {
@@ -35,30 +39,18 @@ const Pricing = () => {
   };
 
   // 获取折扣后价格
-  const proxyBuyFn = (type) => {
-    const params = {
-      discountKey: code,
-      shopType: selVal,
-    };
-
+  const proxyBuyFn = () => {
     setApplyLoad(true);
 
-    discountInfo(params).then(
+    getDiscountKeyInfo(
+      { discountKey: code, shopType },
       (result) => {
         if (result && result.code === 200) {
-          proxyBuy(params).then(
+          getProxyBuy(
+            { discountKey: code, shopType, paytype: 'stripe' },
             (res) => {
               if (res && res.code === 200) {
-                setPricepriceData({
-                  ...res.result,
-                  feeDao: result.result.feeDao,
-                  fee: result.result.fee,
-                });
-                if (type === 'wechat') {
-                  setIsModalVisible(true);
-                } else if (type === 'stripe') {
-                  window.payFn(res.result.checkoutSessionid);
-                }
+                window.payFn(res.result.checkoutSessionid);
               } else {
                 notification.error({
                   message: 'system error',
@@ -67,7 +59,7 @@ const Pricing = () => {
               }
               setApplyLoad(false);
             },
-            (error) => {
+            () => {
               notification.error({
                 message: 'Tips',
                 description: "You haven't login , please login first",
@@ -83,7 +75,7 @@ const Pricing = () => {
           setApplyLoad(false);
         }
       },
-      (error) => {
+      () => {
         notification.error({
           message: 'Tips',
           description: "You haven't login , please login first",
@@ -117,7 +109,7 @@ const Pricing = () => {
                   </p>
                 ))}
               </div>
-              <div className='btn' onClick={showModal}>
+              <div className='btn' onClick={() => showModal(item.type)}>
                 Buy Now
               </div>
             </div>
@@ -146,7 +138,16 @@ const Pricing = () => {
               value={code}
               onChange={codeChange}
             />
-            <div className='entering-btn'>APPLY</div>
+            {/* <div className='entering-btn'>APPLY</div> */}
+            <Button
+              className='entering-btn'
+              loading={applyLoad}
+              onClick={() => {
+                proxyBuyFn();
+              }}
+            >
+              APPLY
+            </Button>
           </div>
         </div>
       </Modal>

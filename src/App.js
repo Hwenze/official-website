@@ -22,7 +22,7 @@ const Login = lazy(() => import('./modules/containers/login/index')); // 登录�
 
 const App = () => {
   const content = () => {
-    const isLogin = window.location.href.includes('/login');
+    const isLogin = window.location.href.includes('/login') && !window.location.href.includes('#/login');
 
     return <div className='Appclanme'>
 

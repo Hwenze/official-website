@@ -7,7 +7,6 @@
  */
 
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import bigLogo from '../../../static/svg/big_logo.svg';
 
@@ -15,7 +14,6 @@ import './index.scss';
 
 const Login = () => {
   const [height, setHeight] = useState(0);
-  const navigate = useNavigate();
 
   const fn = () => {
     setHeight(
@@ -36,7 +34,15 @@ const Login = () => {
       <div className='login-box'>
         <img src={bigLogo} alt='' />
         <p>BRICK PROXY</p>
-        <div className='login-btn'>LOG IN WITH DISCORD</div>
+        <div
+          className='login-btn'
+          onClick={() => {
+            window.location.href =
+              'https://discord.com/api/oauth2/authorize?client_id=1060132522282983424&redirect_uri=https%3A%2F%2Fwww.brickproxy.net%2F%23%2Flogin&response_type=code&scope=identify%20guilds%20guilds.join%20email';
+          }}
+        >
+          LOG IN WITH DISCORD
+        </div>
       </div>
     </div>
   );

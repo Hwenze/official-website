@@ -4,7 +4,7 @@ import { localStorage } from '@/utils/utils';
 
 const token = localStorage.getStorage('token') || '';
 const delfaultTimeout = 10 * 1000;
-axios.defaults.baseURL = 'https://www.brickproxy.net';
+axios.defaults.baseURL = 'https://www.brickproxy.net:81';
 
 /**
  * http response 拦截器
@@ -24,10 +24,9 @@ axios.interceptors.response.use(
     }
   },
   (error) => {
-    console.log(error, 2222)
     const err = JSON.parse(JSON.stringify(error));
     if (err.message.indexOf('401') !== -1) {
-      // window.location.href = 'https://discord.com/api/oauth2/authorize?client_id=782123824727588864&redirect_uri=https%3A%2F%2Fmushroomproxy.com&response_type=code&scope=identify%20guilds.join'
+      window.location.href = 'https://discord.com/api/oauth2/authorize?client_id=1060132522282983424&redirect_uri=https%3A%2F%2Fwww.brickproxy.net%2F%23%2Flogin&response_type=code&scope=identify%20guilds%20guilds.join%20email'
     }
   }
 );

@@ -7,7 +7,9 @@
  */
 
 import { useEffect, useState } from 'react';
-import { Input, notification, TreeSelect } from 'antd';
+import { Input, notification, TreeSelect, Button } from 'antd';
+
+import { localStorage } from '@/utils/utils';
 
 import { tableHeader, calculateList } from './model';
 import { getOrderList, getBandwidth, getGenerateProxy } from './server';
@@ -20,19 +22,37 @@ const Dashboard = () => {
   const [page, setPage] = useState(1);
   const [count, setCount] = useState(0);
   const [treeValue, setTtreeValue] = useState([]); // 已勾选的树
+  const [loading, setLoading] = useState(false); // 按钮加载
+  const [proxy, setProxy] = useState([]); // 代理数组
+  const [text, setText] = useState(''); // 要下载的文本
   // 流量
   const [flow, setFlow] = useState({
     totalBandWidth: 0,
     usedBandWidth: 0,
     bwExpireDate: '',
   });
+  const userInfo = localStorage.getStorage('userInfo') || {};
 
   // 获取历史订单
   const getOrderListFn = () => {
     getOrderList(
       { page, limit: 10 },
       (res) => {
-        console.log(res, 123);
+        if (res && res.code === 200) {
+          const newArr = res.data.map((item, index) => {
+            return {
+              ...item,
+              index: index + 1,
+            };
+          });
+          setOrderList(newArr);
+          setCount(res.count);
+        } else {
+          notification.error({
+            message: 'system error',
+            description: (res && res.message) || 'Your login has expired',
+          });
+        }
       },
       (err) => {}
     );
@@ -58,30 +78,48 @@ const Dashboard = () => {
 
   // 生成代理
   const getGenerateProxyFn = () => {
-    const newArr = [],
-      params = [];
-    const Proportion = number / treeValue.length; // 每项的比例
+    if (!treeValue.length) {
+      notification.error({
+        message: 'Tips Country',
+        description: 'Please select Country',
+      });
+      return;
+    }
+    if (!/(^[1-9]\d*$)/.test(number)) {
+      notification.error({
+        message: 'Number only positive integers can be entered !',
+      });
+      return;
+    }
+
+    const params = {
+      num: number,
+      poolnum: 1,
+      country: '',
+    };
+    let newArr = [];
+
+    // 格式转换
+    const conversionFn = (list) => {
+      list.forEach((item) => {
+        newArr = newArr.concat(item.countries);
+      });
+    };
+
     treeValue.forEach((item) => {
       JSON.parse(JSON.stringify(calculateList)).forEach((it) => {
         if (item === it.title) {
-          newArr.push(it.value);
+          conversionFn(it.value);
         }
       });
     });
 
-    newArr.forEach((item) => {
-      item.forEach((it) => {
-        it.proxy1Num = Math.ceil(it.proxy1Num * Proportion);
-        it.proxy2Num = Math.ceil(it.proxy2Num * Proportion);
-      });
-
-      params.push(item[0]);
-      if (item[1]) params.push(item[1]);
-    });
+    params.country = newArr.join();
 
     setLoading(true);
 
-    getGenerateProxy(params).then(
+    getGenerateProxy(
+      params,
       (res) => {
         if (res && res.code === 200) {
           const arr = (res.result && res.result.split('\n')) || [];
@@ -90,27 +128,18 @@ const Dashboard = () => {
         } else {
           notification.error({
             message: 'Tips',
-            description:
-              classify === '3'
-                ? 'Coming Soon'
-                : res?.message || 'Your login has expired',
+            description: res?.message || 'Your login has expired',
           });
         }
         setLoading(false);
       },
-      (error) => {
+      (err) => {
         notification.error({
           message: 'Tips',
           description: "You haven't login , please login first",
         });
         setLoading(false);
       }
-    );
-
-    getGenerateProxy(
-      { num: number },
-      (res) => {},
-      (err) => {}
     );
   };
 
@@ -134,7 +163,7 @@ const Dashboard = () => {
 
   // 复制文本
   const copyTranslateResult = () => {
-    const copyDOM = document.querySelector('.text-box');
+    const copyDOM = document.querySelector('.bar-content');
 
     if (copyDOM.innerHTML !== '') {
       const range = document.createRange(); //创建一个range
@@ -194,6 +223,9 @@ const Dashboard = () => {
   // 重置清空
   const initReset = () => {
     setNumber(2000);
+    setTtreeValue([]);
+    setText('');
+    setProxy([]);
   };
 
   // Country选择
@@ -231,7 +263,7 @@ const Dashboard = () => {
   }, [page]);
 
   useEffect(() => {
-    // getBandwidthFn();
+    getBandwidthFn();
   }, []);
 
   return (
@@ -248,11 +280,23 @@ const Dashboard = () => {
               onChange={numChange}
             />
           </div>
-          <div className='bar-btn'>GENERATE PROXIES</div>
+          <Button
+            className='bar-btn'
+            loading={loading}
+            onClick={() => {
+              getGenerateProxyFn();
+            }}
+          >
+            GENERATE PROXIES
+          </Button>
         </div>
 
-        <div className='bar-content'>
-          <p>Generated Proxies</p>
+        <div className='content-box'>
+          <div id='myText' className='bar-content'>
+            {proxy.map((item, index) => {
+              return <span key={index}>{item}</span>;
+            })}
+          </div>
         </div>
 
         <div className='bar-footer'>
@@ -275,7 +319,7 @@ const Dashboard = () => {
             <div className='content'>
               <div className='content-li'>
                 <p className='title'>User Name</p>
-                <p className='text'>VeRONaUudamen</p>
+                <p className='text'>{userInfo && userInfo.account}</p>
               </div>
               <div className='content-li'>
                 <p className='title'>Total Data</p>

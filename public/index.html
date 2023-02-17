@@ -29,7 +29,7 @@
 <script>
   window.onload = function () {
     window.payFn = function (sessionId) {
-      let stripe = Stripe("pk_live_51KJY8lIw0Nebm8jndnTTd9zycLLBh9LhSh7bY7j467Gmnn3I4UCTIPqHLoRbarZxih35hiywuYItgUegjeL1pma400hAtzpu5Z");
+      let stripe = Stripe("pk_live_51MbD8TDT5fTeWD5Qp1TaThQbHn98A1mtJRPyB4a7A5TCMuKhRqqvYtgHwfjpOnRhHHiJGb6v9Qa5gaYRy3x676qb00WEV1es1m");
       stripe.redirectToCheckout({ sessionId: sessionId })
         .then(function (result) {
           // If `redirectToCheckout` fails due to a browser or network

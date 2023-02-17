@@ -1,8 +1,8 @@
-import { get, postJson } from '@/axios/axios';
+import { get } from '@/axios/axios';
 
 // 获取分页查询订单
 export function getOrderList(params, success, fail) {
-    return postJson(`/api/OrderList/Load`, params, success, fail);
+    return get(`/api/OrderList/Load`, params, success, fail);
 }
 
 // 获取总流量
@@ -12,5 +12,5 @@ export function getBandwidth(params, success, fail) {
 
 // 生成代理
 export function getGenerateProxy(params, success, fail) {
-    return postJson(`/api/ProxyGenerage/GenerateProxy`, params, success, fail);
+    return get(`/api/ProxyGenerage/GenerateProxy`, params, success, fail);
 }
